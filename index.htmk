@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Excelencia LMS | Worksheets & Learning Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f6f9fc 0%, #edf2f7 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 18px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area h2 {
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            font-size: 1.6rem;
+        }
+
+        .logo-area p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .user-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 18px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            font-weight: 500;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 280px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(2px);
+            height: calc(100vh - 76px);
+            position: fixed;
+            top: 76px;
+            left: 0;
+            padding: 25px 18px;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.05);
+            overflow-y: auto;
+            border-right: 1px solid rgba(0,0,0,0.05);
+            z-index: 99;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            color: #1f2937;
+            text-decoration: none;
+            margin: 8px 0;
+            border-radius: 16px;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            background: white;
+            border: 1px solid #e9eef3;
+        }
+
+        .sidebar a:hover {
+            background: linear-gradient(95deg, #eef2ff, #ffffff);
+            color: #1e3c72;
+            transform: translateX(5px);
+            border-color: #cbd5e1;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 300px;
+            padding: 32px 40px;
+            transition: 0.3s;
+        }
+
+        /* Cards & UI */
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px;
+            margin-bottom: 32px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* Worksheet Grid */
+        .worksheet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .worksheet-card {
+            background: linear-gradient(135deg, #fff, #fef9e6);
+            border-radius: 24px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid #ffe6b3;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+        }
+
+        .worksheet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15);
+            border-color: #facc15;
+        }
+
+        .worksheet-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .worksheet-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .worksheet-card p {
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .btn-preview {
+            background: linear-gradient(95deg, #2a5298, #1e3c72);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .btn-preview:hover {
+            background: linear-gradient(95deg, #1e3c72, #0f2b4f);
+            transform: scale(1.02);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+        }
+
+        .help-section {
+            background: linear-gradient(115deg, #eef2ff, #ffffff);
+            border-radius: 28px;
+            padding: 28px;
+            border-left: 8px solid #facc15;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 12px 24px;
+            border-radius: 60px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Login Form */
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(125deg, #c6e0ff, #d9e6f5);
+        }
+
+        .login-card {
+            width: 460px;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            border-radius: 48px;
+            padding: 48px 40px;
+            box-shadow: 0 35px 60px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 14px 18px;
+            margin: 12px 0;
+            border: 2px solid #e2e8f0;
+            border-radius: 60px;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        .login-card input:focus {
+            border-color: #2a5298;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(42,82,152,0.2);
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: 0.2s;
+        }
+
+        /* Modal */
+        .modal-preview {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-container {
+            background: white;
+            width: 85%;
+            height: 85%;
+            border-radius: 32px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.4);
+        }
+
+        .modal-header {
+            background: #1e3c72;
+            color: white;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            flex: 1;
+            background: #f1f5f9;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Animations */
+        .section {
+            animation: fadeSlideUp 0.4s ease;
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        @media (max-width: 780px) {
+            .sidebar {
+                width: 240px;
+            }
+            .main-content {
+                margin-left: 260px;
+                padding: 20px;
+            }
+            .worksheet-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: 0.3s;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        .badge-new {
+            background: #facc15;
+            color: #1e293b;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 30px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- LOGIN PAGE -->
+    <div id="loginPage" class="login-wrapper">
+        <div class="login-card">
+            <div style="font-size: 3rem;">📚✨</div>
+            <h1 style="color: #1e3c72; margin: 15px 0 5px;">Excelencia LMS</h1>
+            <p style="color: #4b5563; margin-bottom: 25px;">Grammar Worksheets & Learning Hub</p>
+            <input type="text" id="username" placeholder="Username (student01 to student10)" autocomplete="off">
+            <input type="password" id="password" placeholder="Password: Learn@2024">
+            <button class="login-btn" onclick="login()">🔐 Access Worksheets Portal</button>
+            <p style="margin-top: 20px; font-size: 13px; color: #6c757d;">Demo: student01 / Learn@2024</p>
+            <p style="margin-top: 12px; font-size: 12px;">📞 Need help? +91 9049132586 | gospelgraceedu@gmail.com</p>
+        </div>
+    </div>
+
+    <!-- MAIN PORTAL -->
+    <div id="mainPortal" style="display: none;">
+        <div class="header">
+            <div class="logo-area">
+                <h2>📖 Excelencia Grammar Hub</h2>
+                <p>Interactive Worksheets • Google Drive Integration</p>
+            </div>
+            <div class="user-badge" id="currentUserDisplay"></div>
+        </div>
+
+        <div class="sidebar">
+            <a href="#" onclick="showSection('dashboard')">🏠 Dashboard</a>
+            <a href="#" onclick="showSection('grammarWorksheets')">📝 Grammar Worksheets</a>
+            <a href="#" onclick="showSection('testZone')">✍️ Practice Tests</a>
+            <a href="#" onclick="showSection('driveResources')">📁 Drive Resources</a>
+            <a href="#" onclick="showSection('helpSupport')">🆘 Help & Support</a>
+            <a href="#" onclick="logout()" style="color: #b91c1c;">🚪 Logout</a>
+        </div>
+
+        <div class="main-content">
+            <!-- DASHBOARD -->
+            <div id="dashboard" class="section">
+                <div class="card">
+                    <span class="section-title">🌟 Welcome to Your Grammar Mastery Hub</span>
+                    <p style="margin-top: 12px; font-size: 1.05rem;">Access 5 specially curated Grammar Worksheets: Nouns, Prepositions, Adjectives, Verbs, and Tenses. Click "Grammar Worksheets" to download, preview, and learn.</p>
+                    <div style="background: #fef9e6; padding: 18px; border-radius: 24px; margin-top: 20px;">
+                        <strong>📌 Quick links:</strong> All worksheets are hosted on Google Drive — preview directly inside portal or download for offline practice.
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>📈 Your Progress Tracker</h3>
+                    <p>Complete each worksheet and track your grammar proficiency. For any doubts, reach out via email or phone support.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 12px;">
+                        <span class="badge-new">⭐ Noun Worksheet</span>
+                        <span class="badge-new">⭐ Preposition Sheet</span>
+                        <span class="badge-new">⭐ Adjective Practice</span>
+                        <span class="badge-new">⭐ Verbs Exercise</span>
+                        <span class="badge-new">⭐ Tense Mastery</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRAMMAR WORKSHEETS SECTION (5 WORKSHEETS from Google Drive links) -->
+            <div id="grammarWorksheets" class="section" style="display: none;">
+                <div class="card">
+                    <h2 class="section-title">📓 Grammar Worksheets Collection</h2>
+                    <p>Click on any worksheet to preview or download. All materials from official Google Drive.</p>
+                    <div class="worksheet-grid" id="worksheetsGrid">
+                        <!-- Dynamically filled with JS but also static fallback -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRACTICE TEST ZONE -->
+            <div id="testZone" class="section" style="display: none;">
+                <div class="card">
+                    <h2 class="section-title">✍️ Mini Grammar Challenges</h2>
+                    <p>Test your skills with quick practice questions based on worksheet themes.</p>
+                    <div class="worksheet-grid">
+                        <div class="worksheet-card"><div class="worksheet-icon">📝</div><h3>Noun Quiz</h3><p>10 questions on common/proper nouns.</p><button class="btn-preview" onclick="alert('📖 Noun quiz demo: Identify nouns in sentences. Full worksheet available in Grammar section.')">Start Demo</button></div>
+                        <div class="worksheet-card"><div class="worksheet-icon">🔗</div><h3>Preposition Challenge</h3><p>Fill in the blanks with correct prepositions.</p><button class="btn-preview" onclick="alert('🔍 Preposition practice: download worksheet to access 20+ exercises.')">Try Sample</button></div>
+                        <div class="worksheet-card"><div class="worksheet-icon">🎨</div><h3>Adjective Master</h3><p>Identify and use adjectives correctly.</p><button class="btn-preview" onclick="alert('🌟 Check Adjective worksheet for detailed practice.')">Explore</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DRIVE RESOURCES (extra folder integration) -->
+            <div id="driveResources" class="section" style="display: none;">
+                <div class="card">
+                    <h2 class="section-title">📁 Complete Google Drive Folder</h2>
+                    <p>Access all grammar worksheets and additional study materials in one folder.</p>
+                    <button class="btn-preview" onclick="openDriveFolder()" style="background: #2c5f2d; margin-top: 10px;">🔗 Open Main Drive Folder</button>
+                    <hr style="margin: 20px 0;">
+                    <h3>📄 Direct Worksheet Links (Google Drive)</h3>
+                    <ul style="margin-top: 12px; list-style: none;">
+                        <li style="margin: 8px 0;">✅ <strong>Worksheet 1: Noun</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8" target="_blank">Download</a></li>
+                        <li style="margin: 8px 0;">✅ <strong>Worksheet 2: Preposition</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S" target="_blank">Download</a></li>
+                        <li style="margin: 8px 0;">✅ <strong>Worksheet 3: Adjective</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT" target="_blank">Download</a></li>
+                        <li style="margin: 8px 0;">✅ <strong>Worksheet 4: Verbs</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w" target="_blank">Download</a></li>
+                        <li style="margin: 8px 0;">✅ <strong>Worksheet 5: Tense</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/18nLOTW6468lcYD6o1nVKM3qxmf54Evhu/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=18nLOTW6468lcYD6o1nVKM3qxmf54Evhu" target="_blank">Download</a></li>
+                    </ul>
+                    <p class="badge-new" style="margin-top: 18px;">✨ All files are official & directly accessible via Google Drive.</p>
+                </div>
+            </div>
+
+            <!-- HELP & SUPPORT SECTION -->
+            <div id="helpSupport" class="section" style="display: none;">
+                <div class="help-section">
+                    <h2 style="display: flex; gap: 10px; align-items: center;">🆘 Student Support Center</h2>
+                    <p style="margin: 12px 0 20px 0;">Having trouble accessing worksheets? Need extra grammar exercises? Reach out to us anytime.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">📧 <strong>Email:</strong> gospelgraceedu@gmail.com</div>
+                        <div class="contact-item">📞 <strong>Phone / WhatsApp:</strong> +91 9049132586</div>
+                    </div>
+                    <div style="margin-top: 25px; background: #fff7e0; padding: 16px; border-radius: 24px;">
+                        <strong>⏰ Support Hours:</strong> Mon - Sat (9 AM to 7 PM) | Response within 24 hours.
+                        <br>💡 For worksheet doubts or missing links, please contact us directly.
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 20px;">
+                    <h3>📢 Frequently Asked Questions</h3>
+                    <p><strong>How to download worksheets?</strong> Click on "Download" link or use the preview modal then save PDF.<br>
+                    <strong>Can I print these worksheets?</strong> Yes, all worksheets are printable PDFs.<br>
+                    <strong>Are answer keys available?</strong> Please mail us to request answer keys.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Previewing Google Drive Files -->
+    <div id="previewModal" class="modal-preview">
+        <div class="modal-container">
+            <div class="modal-header">
+                <span>📄 Worksheet Preview (Google Drive)</span>
+                <button onclick="closePreviewModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="previewIframe" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ----- GRAMMAR WORKSHEETS DATA -----
+        const grammarWorksheets = [
+            { name: "Noun Worksheet", topic: "Types of Nouns, Common & Proper", icon: "📖", driveId: "1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8", previewUrl: "https://drive.google.com/file/d/1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8/preview", downloadUrl: "https://drive.google.com/uc?export=download&id=1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8" },
+            { name: "Preposition Worksheet", topic: "Placement & Usage", icon: "📍", driveId: "1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S", previewUrl: "https://drive.google.com/file/d/1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S/preview", downloadUrl: "https://drive.google.com/uc?export=download&id=1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S" },
+            { name: "Adjective Worksheet", topic: "Degrees & Descriptive", icon: "🎨", driveId: "1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT", previewUrl: "https://drive.google.com/file/d/1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT/preview", downloadUrl: "https://drive.google.com/uc?export=download&id=1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT" },
+            { name: "Verbs Worksheet", topic: "Action, Linking & Helping", icon: "⚡", driveId: "1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w", previewUrl: "https://drive.google.com/file/d/1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w/preview", downloadUrl: "https://drive.google.com/uc?export=download&id=1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w" },
+            { name: "Tense Worksheet", topic: "Present, Past, Future", icon: "⏳", driveId: "18nLOTW6468lcYD6o1nVKM3qxmf54Evhu", previewUrl: "https://drive.google.com/file/d/18nLOTW6468lcYD6o1nVKM3qxmf54Evhu/preview", downloadUrl: "https://drive.google.com/uc?export=download&id=18nLOTW6468lcYD6o1nVKM3qxmf54Evhu" }
+        ];
+
+        // Student credentials (student01 to student10)
+        const students = {};
+        for(let i=1; i<=10; i++) {
+            let id = `student${i.toString().padStart(2,'0')}`;
+            students[id] = 'Learn@2024';
+        }
+        students['student01'] = 'Learn@2024';
+
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            if(students[username] && students[username] === password) {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('mainPortal').style.display = 'block';
+                document.getElementById('currentUserDisplay').innerHTML = `👤 ${username}`;
+                localStorage.setItem('loggedInUser', username);
+                showSection('dashboard');
+                renderWorksheetsGrid();
+            } else {
+                alert('❌ Invalid credentials! Use student01 to student10 with password: Learn@2024');
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            document.getElementById('loginPage').style.display = 'flex';
+            document.getElementById('mainPortal').style.display = 'none';
+            closePreviewModal();
+        }
+
+        function showSection(sectionId) {
+            const sections = ['dashboard', 'grammarWorksheets', 'testZone', 'driveResources', 'helpSupport'];
+            sections.forEach(sec => {
+                const el = document.getElementById(sec);
+                if(el) el.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+            if(sectionId === 'grammarWorksheets') renderWorksheetsGrid();
+        }
+
+        function renderWorksheetsGrid() {
+            const gridContainer = document.getElementById('worksheetsGrid');
+            if(!gridContainer) return;
+            gridContainer.innerHTML = '';
+            grammarWorksheets.forEach(ws => {
+                const card = document.createElement('div');
+                card.className = 'worksheet-card';
+                card.innerHTML = `
+                    <div class="worksheet-icon">${ws.icon}</div>
+                    <h3>${ws.name}</h3>
+                    <p>📌 ${ws.topic}</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+                        <button class="btn-preview" onclick="previewSpecificFile('${ws.previewUrl}')">👁️ Preview</button>
+                        <a href="${ws.downloadUrl}" target="_blank" class="btn-preview" style="background: #2c5f2d; text-decoration: none;">⬇️ Download PDF</a>
+                    </div>
+                `;
+                gridContainer.appendChild(card);
+            });
+        }
+
+        // Preview modal
+        function previewSpecificFile(previewLink) {
+            const modal = document.getElementById('previewModal');
+            const iframe = document.getElementById('previewIframe');
+            if(!previewLink.includes('preview')) {
+                if(previewLink.includes('file/d/')) {
+                    let fileIdMatch = previewLink.match(/\/d\/(.*?)(\/|$)/);
+                    if(fileIdMatch && fileIdMatch[1]) {
+                        previewLink = `https://drive.google.com/file/d/${fileIdMatch[1]}/preview`;
+                    }
+                }
+            }
+            iframe.src = previewLink;
+            modal.style.display = 'flex';
+        }
+
+        function openDriveFolder() {
+            const mainFolder = "https://drive.google.com/drive/folders/142MgNE0r_zJfCmLGVQWpILlG0xYYZOr-";
+            previewSpecificFile(mainFolder);
+        }
+
+        function closePreviewModal() {
+            const modal = document.getElementById('previewModal');
+            modal.style.display = 'none';
+            const iframe = document.getElementById('previewIframe');
+            iframe.src = '';
+        }
+
+        window.onload = function() {
+            const loggedUser = localStorage.getItem('loggedInUser');
+            if(loggedUser && students[loggedUser]) {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('mainPortal').style.display = 'block';
+                document.getElementById('currentUserDisplay').innerHTML = `👤 ${loggedUser}`;
+                showSection('dashboard');
+                renderWorksheetsGrid();
+            }
+            // add modal backdrop close
+            const modal = document.getElementById('previewModal');
+            modal.addEventListener('click', function(e) {
+                if(e.target === modal) closePreviewModal();
+            });
+        };
+    </script>
+</body>
+</html>
