@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Excelencia LMS | Worksheets & Learning Portal</title>
+    <title>Gospel Grace Education | Tec With Amey LMS TWA - Grammar Worksheets Portal</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Gospel Grace Education presents Excelencia LMS by Tec With Amey. Access interactive grammar worksheets, practice tests, and Google Drive resources. Student login for nouns, verbs, tenses, adjectives, prepositions.">
+    <meta name="keywords" content="Gospel Grace Education, Tec With Amey, LMS TWA, Grammar Worksheets, English Learning, Online Worksheets, Google Drive Worksheets, Student Portal, Noun Worksheet, Preposition, Adjective, Verbs, Tenses, Practice Tests">
+    <meta name="author" content="Gospel Grace Education & Tec With Amey">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Gospel Grace Education | Tec With Amey | LMS TWA - Grammar Mastery Hub">
+    <meta property="og:description" content="Premium grammar worksheets and learning management system for students. Access interactive materials, drive resources and support.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.gospelgraceeducation.com">
     <style>
         * {
             margin: 0;
@@ -19,9 +29,9 @@
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0b2b44 0%, #1a4a6f 100%);
             color: white;
-            padding: 18px 32px;
+            padding: 12px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -33,14 +43,36 @@
             z-index: 1000;
         }
 
-        .logo-area h2 {
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            font-size: 1.6rem;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-
-        .logo-area p {
-            font-size: 0.8rem;
+        .logo-img {
+            height: 50px;
+            width: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 5px 10px;
+            object-fit: contain;
+        }
+        .logo-text h2 {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-size: 1.5rem;
+            background: linear-gradient(120deg, #FFE6B0, #FFD966);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo-text h2 span {
+            color: #FFD966;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+        .logo-text p {
+            font-size: 0.7rem;
             opacity: 0.9;
         }
 
@@ -55,11 +87,11 @@
         /* Sidebar Navigation */
         .sidebar {
             width: 280px;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.96);
             backdrop-filter: blur(2px);
-            height: calc(100vh - 76px);
+            height: calc(100vh - 74px);
             position: fixed;
-            top: 76px;
+            top: 74px;
             left: 0;
             padding: 25px 18px;
             box-shadow: 4px 0 20px rgba(0,0,0,0.05);
@@ -116,7 +148,7 @@
         .section-title {
             font-size: 1.8rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #0b2b44, #2a6b9e);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -133,7 +165,7 @@
         }
 
         .worksheet-card {
-            background: linear-gradient(135deg, #fff, #fef9e6);
+            background: linear-gradient(135deg, #fff, #fffaf0);
             border-radius: 24px;
             padding: 20px;
             transition: all 0.3s ease;
@@ -218,8 +250,35 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(125deg, #c6e0ff, #d9e6f5);
+            position: relative;
         }
-
+        .login-brand {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .login-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .login-logo-img {
+            height: 70px;
+            width: auto;
+            background: white;
+            border-radius: 18px;
+            padding: 8px 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .login-brand h2 {
+            color: #0b2b44;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        .login-brand h3 {
+            color: #2a5298;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
         .login-card {
             width: 460px;
             background: rgba(255,255,255,0.96);
@@ -353,29 +412,69 @@
             margin-left: 10px;
             font-weight: bold;
         }
+        .gospel-badge {
+            background: #FFD966;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #0b2b44;
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #4b5563;
+        }
+        /* Logo placeholder style - replace with actual logo URL */
+        .logo-img-default {
+            height: 50px;
+            width: auto;
+            background: #ffffff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 12px;
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body>
-    <!-- LOGIN PAGE -->
+    <!-- LOGIN PAGE - Cross symbol removed, logo added -->
     <div id="loginPage" class="login-wrapper">
         <div class="login-card">
-            <div style="font-size: 3rem;">📚✨</div>
-            <h1 style="color: #1e3c72; margin: 15px 0 5px;">Excelencia LMS</h1>
-            <p style="color: #4b5563; margin-bottom: 25px;">Grammar Worksheets & Learning Hub</p>
-            <input type="text" id="username" placeholder="Username (student01 to student10)" autocomplete="off">
+            <div class="login-brand">
+                <div class="login-logo">
+                    <!-- Logo Image Area - Replace src with your actual logo URL -->
+                    <img id="loginLogo" class="login-logo-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect width='200' height='60' fill='%231e3c72' rx='12'/%3E%3Ctext x='20' y='38' font-family='Arial' font-size='22' fill='%23FFD966' font-weight='bold'%3EGospel%3C/text%3E%3Ctext x='110' y='38' font-family='Arial' font-size='22' fill='white' font-weight='bold'%3EGrace%3C/text%3E%3C/svg%3E" alt="Gospel Grace Education Logo" onerror="this.src='https://placehold.co/200x60/1e3c72/FFD966?text=Gospel+Grace'">
+                </div>
+                <h2>Gospel Grace Education</h2>
+                <h3>Tec With Amey | LMS TWA</h3>
+                <p style="color: #4b5563; margin: 8px 0;">Excelencia Grammar Hub</p>
+            </div>
+            <input type="text" id="username" placeholder="Student ID (student01 to student10)" autocomplete="off">
             <input type="password" id="password" placeholder="Password: Learn@2024">
-            <button class="login-btn" onclick="login()">🔐 Access Worksheets Portal</button>
+            <button class="login-btn" onclick="login()">🔐 Access Learning Portal</button>
             <p style="margin-top: 20px; font-size: 13px; color: #6c757d;">Demo: student01 / Learn@2024</p>
-            <p style="margin-top: 12px; font-size: 12px;">📞 Need help? +91 9049132586 | gospelgraceedu@gmail.com</p>
+            <div style="margin-top: 18px; background:#f1f5f9; padding: 10px; border-radius: 60px;">
+                <p style="font-size:12px;">📞 Support: +91 9049132586 | ✉️ gospelgraceedu@gmail.com</p>
+            </div>
         </div>
     </div>
 
-    <!-- MAIN PORTAL -->
+    <!-- MAIN PORTAL with Logo in Header -->
     <div id="mainPortal" style="display: none;">
         <div class="header">
             <div class="logo-area">
-                <h2>📖 Excelencia Grammar Hub</h2>
-                <p>Interactive Worksheets • Google Drive Integration</p>
+                <!-- Logo added in header -->
+                <img id="headerLogo" class="logo-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 50'%3E%3Crect width='200' height='50' fill='%23ffffff' rx='10'/%3E%3Ctext x='15' y='32' font-family='Arial' font-size='18' fill='%231e3c72' font-weight='bold'%3EGospel%3C/text%3E%3Ctext x='95' y='32' font-family='Arial' font-size='18' fill='%23facc15' font-weight='bold'%3EGrace%3C/text%3E%3C/svg%3E" alt="Gospel Grace Logo" onerror="this.src='https://placehold.co/180x50/ffffff/1e3c72?text=Gospel+Grace'">
+                <div class="logo-text">
+                    <h2>Gospel Grace Education | <span>Tec With Amey</span> | LMS TWA</h2>
+                    <p>Interactive Grammar Worksheets • Google Drive Integration • Student Success Hub</p>
+                </div>
             </div>
             <div class="user-badge" id="currentUserDisplay"></div>
         </div>
@@ -390,18 +489,18 @@
         </div>
 
         <div class="main-content">
-            <!-- DASHBOARD -->
+            <!-- DASHBOARD - SEO Optimized Content -->
             <div id="dashboard" class="section">
                 <div class="card">
-                    <span class="section-title">🌟 Welcome to Your Grammar Mastery Hub</span>
-                    <p style="margin-top: 12px; font-size: 1.05rem;">Access 5 specially curated Grammar Worksheets: Nouns, Prepositions, Adjectives, Verbs, and Tenses. Click "Grammar Worksheets" to download, preview, and learn.</p>
+                    <span class="section-title">🌟 Welcome to Gospel Grace Education – Excelencia LMS by Tec With Amey</span>
+                    <p style="margin-top: 12px; font-size: 1.05rem;">Access 5 expertly curated Grammar Worksheets: Nouns, Prepositions, Adjectives, Verbs, and Tenses. Strengthen your English grammar with interactive PDFs powered by Google Drive integration. Developed under <strong>Gospel Grace Education & Tec With Amey (LMS TWA)</strong> for student excellence.</p>
                     <div style="background: #fef9e6; padding: 18px; border-radius: 24px; margin-top: 20px;">
-                        <strong>📌 Quick links:</strong> All worksheets are hosted on Google Drive — preview directly inside portal or download for offline practice.
+                        <strong>📌 Quick access:</strong> All worksheets are hosted securely on Google Drive — preview online, download for offline practice, and master grammar step by step.
                     </div>
                 </div>
                 <div class="card">
-                    <h3>📈 Your Progress Tracker</h3>
-                    <p>Complete each worksheet and track your grammar proficiency. For any doubts, reach out via email or phone support.</p>
+                    <h3>📈 Your Progress Tracker & Core Topics</h3>
+                    <p>Complete each worksheet and track proficiency in core English grammar. For any doubts, contact Gospel Grace Education support.</p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 12px;">
                         <span class="badge-new">⭐ Noun Worksheet</span>
                         <span class="badge-new">⭐ Preposition Sheet</span>
@@ -409,16 +508,17 @@
                         <span class="badge-new">⭐ Verbs Exercise</span>
                         <span class="badge-new">⭐ Tense Mastery</span>
                     </div>
+                    <p style="margin-top: 16px; font-size:0.9rem;">🔍 <strong>SEO Focus:</strong> Best English grammar worksheets for students | Gospel Grace Education Learning Management System</p>
                 </div>
             </div>
 
-            <!-- GRAMMAR WORKSHEETS SECTION (5 WORKSHEETS from Google Drive links) -->
+            <!-- GRAMMAR WORKSHEETS SECTION 5 WORKSHEETS -->
             <div id="grammarWorksheets" class="section" style="display: none;">
                 <div class="card">
-                    <h2 class="section-title">📓 Grammar Worksheets Collection</h2>
-                    <p>Click on any worksheet to preview or download. All materials from official Google Drive.</p>
+                    <h2 class="section-title">📓 Grammar Worksheets Collection – Nouns, Verbs, Tenses, Adjectives, Prepositions</h2>
+                    <p>Click any worksheet to preview or download. All materials are provided by Gospel Grace Education and hosted via official Google Drive.</p>
                     <div class="worksheet-grid" id="worksheetsGrid">
-                        <!-- Dynamically filled with JS but also static fallback -->
+                        <!-- Dynamic JS fill -->
                     </div>
                 </div>
             </div>
@@ -426,7 +526,7 @@
             <!-- PRACTICE TEST ZONE -->
             <div id="testZone" class="section" style="display: none;">
                 <div class="card">
-                    <h2 class="section-title">✍️ Mini Grammar Challenges</h2>
+                    <h2 class="section-title">✍️ Mini Grammar Challenges – Tec With Amey LMS TWA</h2>
                     <p>Test your skills with quick practice questions based on worksheet themes.</p>
                     <div class="worksheet-grid">
                         <div class="worksheet-card"><div class="worksheet-icon">📝</div><h3>Noun Quiz</h3><p>10 questions on common/proper nouns.</p><button class="btn-preview" onclick="alert('📖 Noun quiz demo: Identify nouns in sentences. Full worksheet available in Grammar section.')">Start Demo</button></div>
@@ -436,14 +536,14 @@
                 </div>
             </div>
 
-            <!-- DRIVE RESOURCES (extra folder integration) -->
+            <!-- DRIVE RESOURCES with Gospel Grace Folder -->
             <div id="driveResources" class="section" style="display: none;">
                 <div class="card">
-                    <h2 class="section-title">📁 Complete Google Drive Folder</h2>
-                    <p>Access all grammar worksheets and additional study materials in one folder.</p>
-                    <button class="btn-preview" onclick="openDriveFolder()" style="background: #2c5f2d; margin-top: 10px;">🔗 Open Main Drive Folder</button>
+                    <h2 class="section-title">📁 Complete Google Drive Folder – Gospel Grace Education Resources</h2>
+                    <p>Access all grammar worksheets, answer keys and extra study materials in one master folder.</p>
+                    <button class="btn-preview" onclick="openDriveFolder()" style="background: #2c5f2d; margin-top: 10px;">🔗 Open Main Drive Folder (Gospel Grace)</button>
                     <hr style="margin: 20px 0;">
-                    <h3>📄 Direct Worksheet Links (Google Drive)</h3>
+                    <h3>📄 Direct Worksheet Links (Google Drive Integration)</h3>
                     <ul style="margin-top: 12px; list-style: none;">
                         <li style="margin: 8px 0;">✅ <strong>Worksheet 1: Noun</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8" target="_blank">Download</a></li>
                         <li style="margin: 8px 0;">✅ <strong>Worksheet 2: Preposition</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S" target="_blank">Download</a></li>
@@ -451,39 +551,43 @@
                         <li style="margin: 8px 0;">✅ <strong>Worksheet 4: Verbs</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w" target="_blank">Download</a></li>
                         <li style="margin: 8px 0;">✅ <strong>Worksheet 5: Tense</strong> - <a href="#" onclick="previewSpecificFile('https://drive.google.com/file/d/18nLOTW6468lcYD6o1nVKM3qxmf54Evhu/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=18nLOTW6468lcYD6o1nVKM3qxmf54Evhu" target="_blank">Download</a></li>
                     </ul>
-                    <p class="badge-new" style="margin-top: 18px;">✨ All files are official & directly accessible via Google Drive.</p>
+                    <p class="badge-new" style="margin-top: 18px;">✨ Powered by Gospel Grace Education | Tec With Amey – All files accessible instantly.</p>
                 </div>
             </div>
 
-            <!-- HELP & SUPPORT SECTION -->
+            <!-- HELP & SUPPORT -->
             <div id="helpSupport" class="section" style="display: none;">
                 <div class="help-section">
-                    <h2 style="display: flex; gap: 10px; align-items: center;">🆘 Student Support Center</h2>
-                    <p style="margin: 12px 0 20px 0;">Having trouble accessing worksheets? Need extra grammar exercises? Reach out to us anytime.</p>
+                    <h2 style="display: flex; gap: 10px; align-items: center;">🆘 Student Support – Gospel Grace Education</h2>
+                    <p style="margin: 12px 0 20px 0;">Having trouble accessing worksheets? Need extra grammar exercises? Reach out to our academic support team.</p>
                     <div class="contact-info">
                         <div class="contact-item">📧 <strong>Email:</strong> gospelgraceedu@gmail.com</div>
                         <div class="contact-item">📞 <strong>Phone / WhatsApp:</strong> +91 9049132586</div>
                     </div>
                     <div style="margin-top: 25px; background: #fff7e0; padding: 16px; border-radius: 24px;">
                         <strong>⏰ Support Hours:</strong> Mon - Sat (9 AM to 7 PM) | Response within 24 hours.
-                        <br>💡 For worksheet doubts or missing links, please contact us directly.
+                        <br>💡 For worksheet doubts or missing links, contact Tec With Amey LMS TWA helpdesk.
                     </div>
                 </div>
                 <div class="card" style="margin-top: 20px;">
                     <h3>📢 Frequently Asked Questions</h3>
                     <p><strong>How to download worksheets?</strong> Click on "Download" link or use the preview modal then save PDF.<br>
                     <strong>Can I print these worksheets?</strong> Yes, all worksheets are printable PDFs.<br>
-                    <strong>Are answer keys available?</strong> Please mail us to request answer keys.</p>
+                    <strong>Are answer keys available?</strong> Please mail us to request answer keys.<br>
+                    <strong>What is Gospel Grace Education?</strong> A premier learning initiative with Tec With Amey LMS TWA for student grammar excellence.</p>
                 </div>
+            </div>
+            <div class="footer-note">
+                © 2025 Gospel Grace Education | Tec With Amey | LMS TWA – Empowering English Grammar Learning
             </div>
         </div>
     </div>
 
-    <!-- Modal for Previewing Google Drive Files -->
+    <!-- Modal for Preview -->
     <div id="previewModal" class="modal-preview">
         <div class="modal-container">
             <div class="modal-header">
-                <span>📄 Worksheet Preview (Google Drive)</span>
+                <span>📄 Worksheet Preview – Gospel Grace Education (Google Drive)</span>
                 <button onclick="closePreviewModal()">&times;</button>
             </div>
             <div class="modal-body">
@@ -493,7 +597,7 @@
     </div>
 
     <script>
-        // ----- GRAMMAR WORKSHEETS DATA -----
+        // GRAMMAR WORKSHEETS (5 official links)
         const grammarWorksheets = [
             { name: "Noun Worksheet", topic: "Types of Nouns, Common & Proper", icon: "📖", driveId: "1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8", previewUrl: "https://drive.google.com/file/d/1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8/preview", downloadUrl: "https://drive.google.com/uc?export=download&id=1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8" },
             { name: "Preposition Worksheet", topic: "Placement & Usage", icon: "📍", driveId: "1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S", previewUrl: "https://drive.google.com/file/d/1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S/preview", downloadUrl: "https://drive.google.com/uc?export=download&id=1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S" },
@@ -502,13 +606,11 @@
             { name: "Tense Worksheet", topic: "Present, Past, Future", icon: "⏳", driveId: "18nLOTW6468lcYD6o1nVKM3qxmf54Evhu", previewUrl: "https://drive.google.com/file/d/18nLOTW6468lcYD6o1nVKM3qxmf54Evhu/preview", downloadUrl: "https://drive.google.com/uc?export=download&id=18nLOTW6468lcYD6o1nVKM3qxmf54Evhu" }
         ];
 
-        // Student credentials (student01 to student10)
         const students = {};
         for(let i=1; i<=10; i++) {
             let id = `student${i.toString().padStart(2,'0')}`;
             students[id] = 'Learn@2024';
         }
-        students['student01'] = 'Learn@2024';
 
         function login() {
             const username = document.getElementById('username').value.trim();
@@ -516,7 +618,7 @@
             if(students[username] && students[username] === password) {
                 document.getElementById('loginPage').style.display = 'none';
                 document.getElementById('mainPortal').style.display = 'block';
-                document.getElementById('currentUserDisplay').innerHTML = `👤 ${username}`;
+                document.getElementById('currentUserDisplay').innerHTML = `👤 ${username} | Gospel Grace`;
                 localStorage.setItem('loggedInUser', username);
                 showSection('dashboard');
                 renderWorksheetsGrid();
@@ -562,19 +664,19 @@
             });
         }
 
-        // Preview modal
         function previewSpecificFile(previewLink) {
             const modal = document.getElementById('previewModal');
             const iframe = document.getElementById('previewIframe');
+            let finalLink = previewLink;
             if(!previewLink.includes('preview')) {
                 if(previewLink.includes('file/d/')) {
                     let fileIdMatch = previewLink.match(/\/d\/(.*?)(\/|$)/);
                     if(fileIdMatch && fileIdMatch[1]) {
-                        previewLink = `https://drive.google.com/file/d/${fileIdMatch[1]}/preview`;
+                        finalLink = `https://drive.google.com/file/d/${fileIdMatch[1]}/preview`;
                     }
                 }
             }
-            iframe.src = previewLink;
+            iframe.src = finalLink;
             modal.style.display = 'flex';
         }
 
@@ -595,11 +697,10 @@
             if(loggedUser && students[loggedUser]) {
                 document.getElementById('loginPage').style.display = 'none';
                 document.getElementById('mainPortal').style.display = 'block';
-                document.getElementById('currentUserDisplay').innerHTML = `👤 ${loggedUser}`;
+                document.getElementById('currentUserDisplay').innerHTML = `👤 ${loggedUser} | Gospel Grace`;
                 showSection('dashboard');
                 renderWorksheetsGrid();
             }
-            // add modal backdrop close
             const modal = document.getElementById('previewModal');
             modal.addEventListener('click', function(e) {
                 if(e.target === modal) closePreviewModal();
