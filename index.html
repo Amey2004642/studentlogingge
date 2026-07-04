@@ -3,264 +3,540 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Excelencia LMS | Gospel Grace Grammar Hub – Smart Learning Portal</title>
-    <meta name="description" content="Gospel Grace Education & Tec With Amey present Excelencia LMS. Interactive grammar worksheets for nouns, verbs, tenses, prepositions, adjectives. Mobile-first design.">
-    <meta name="keywords" content="Excelencia LMS, Gospel Grace, Tec With Amey, grammar worksheets, English grammar, smart portal">
+    <title>Excelencia LMS | Gospel Grace Grammar Hub – Portal</title>
+    <meta name="description" content="Excelencia LMS by Gospel Grace Education. Interactive grammar learning portal featuring curated workspaces, evaluations, and digital resources.">
+    <meta name="keywords" content="Excelencia LMS, Gospel Grace, Grammar Hub, Digital Learning, LMS, English Grammar Portal">
     <meta name="author" content="Gospel Grace Education">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #2563eb;
+            --secondary: #0284c7;
+            --accent: #f59e0b;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --sidebar-width: 280px;
+            --radius-lg: 1.5rem;
+            --radius-md: 1rem;
+            --radius-sm: 0.5rem;
+            --transition: all 0.3s ease;
+            --success: #16a34a;
+            --danger: #dc2626;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+            background: var(--bg-gradient);
+            color: var(--text-main);
             min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
+
+        /* --- LOGIN PORTAL --- */
         .login-wrapper {
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: radial-gradient(circle at 20% 30%, #c7d2fe, #e2e8f0);
+            background: radial-gradient(circle at 10% 20%, rgba(226, 232, 240, 0.6) 0%, rgba(241, 245, 249, 0.6) 90.1%);
             padding: 1.5rem;
         }
+
         .login-card {
-            max-width: 480px;
+            max-width: 440px;
             width: 100%;
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(12px);
-            border-radius: 2.5rem;
-            padding: 2.2rem 1.8rem;
-            box-shadow: 0 30px 50px rgba(0,0,0,0.2);
-            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.7);
         }
+
         .login-logo {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            border-radius: 28px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 2.5rem;
-            color: white;
+            font-size: 2rem;
+            color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+            margin: 0 auto 1.5rem;
         }
+
         .login-brand h2 {
-            font-size: 1.7rem;
+            font-size: 1.75rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--primary);
+            letter-spacing: -0.025em;
         }
+
+        .login-brand h4 {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .login-brand p {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .login-form {
+            margin-top: 1.75rem;
+        }
+
         .login-card input {
             width: 100%;
-            padding: 14px 18px;
-            margin: 12px 0;
-            border: 2px solid #e2e8f0;
-            border-radius: 60px;
-            font-size: 1rem;
-            transition: 0.2s;
-            background: white;
+            padding: 0.875rem 1.25rem;
+            margin: 0.5rem 0 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+            background: #ffffff;
         }
+
         .login-card input:focus {
-            border-color: #3b82f6;
+            border-color: var(--primary-light);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
         }
+
         .login-btn {
-            background: linear-gradient(100deg, #1e3a8a, #2563eb);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             width: 100%;
-            padding: 14px;
+            padding: 0.875rem;
             border: none;
-            border-radius: 60px;
-            font-weight: 700;
-            color: white;
-            font-size: 1rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 0.95rem;
             cursor: pointer;
-            margin-top: 12px;
-            transition: all 0.2s;
+            margin-top: 0.5rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
+
         .login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+            opacity: 0.95;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.25);
         }
+
+        .login-meta {
+            margin-top: 1.25rem;
+            font-size: 0.775rem;
+            color: var(--text-muted);
+        }
+
+        .login-footer-info {
+            margin-top: 1.5rem;
+            background: #f8fafc;
+            padding: 0.75rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid #e2e8f0;
+            font-size: 0.775rem;
+            color: var(--text-muted);
+        }
+
+        /* --- MAIN DASHBOARD PORTAL --- */
         .main-portal {
             display: none;
         }
+
         .smart-header {
-            background: linear-gradient(105deg, #0f2b4d, #1e4a76);
-            padding: 12px 24px;
+            background: var(--primary);
+            padding: 0.875rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
+
         .logo-area-smart {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 0.875rem;
         }
+
         .logo-icon-smart {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            border-radius: 16px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            color: white;
-        }
-        .brand-title {
             font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .brand-title {
+            font-size: 1.1rem;
             font-weight: 700;
-            color: #FFE6B0;
+            color: #ffffff;
+            line-height: 1.2;
         }
+
         .brand-title span {
-            color: #FCD34D;
+            color: #93c5fd;
+            font-weight: 400;
         }
+
+        .brand-title small {
+            font-size: 0.75rem;
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
         .user-badge {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(6px);
-            padding: 6px 18px;
-            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             font-weight: 500;
-            color: white;
-            font-size: 0.85rem;
+            color: #ffffff;
+            font-size: 0.825rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+
         .mobile-toggle {
-            background: rgba(255,255,255,0.2);
+            background: transparent;
             border: none;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            border-radius: 30px;
-            padding: 4px 14px;
-            color: white;
+            color: #ffffff;
             display: none;
         }
+
+        /* SIDEBAR */
         .smart-sidebar {
-            width: 280px;
-            background: #fffffffa;
-            backdrop-filter: blur(4px);
-            height: calc(100vh - 76px);
+            width: var(--sidebar-width);
+            background: #ffffff;
+            height: calc(100vh - 68px);
             position: fixed;
-            top: 76px;
+            top: 68px;
             left: 0;
-            padding: 24px 16px;
+            padding: 1.5rem 1rem;
             overflow-y: auto;
             z-index: 99;
-            transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            border-right: 1px solid #eef2ff;
-            box-shadow: 4px 0 18px rgba(0,0,0,0.03);
+            transition: var(--transition);
+            border-right: 1px solid #e2e8f0;
         }
+
         .smart-sidebar a {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 12px 18px;
-            color: #1f3a5f;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-muted);
             text-decoration: none;
-            margin: 8px 0;
-            border-radius: 28px;
+            margin-bottom: 0.5rem;
+            border-radius: var(--radius-sm);
             font-weight: 500;
-            transition: all 0.2s;
-            background: white;
-            border: 1px solid #eef2fc;
+            font-size: 0.925rem;
+            transition: var(--transition);
         }
-        .smart-sidebar a:hover {
-            background: #eef4ff;
-            transform: translateX(6px);
-            border-color: #b9d0f0;
-            color: #1e40af;
+
+        .smart-sidebar a:hover, .smart-sidebar a.active {
+            background: #f1f5f9;
+            color: var(--primary-light);
         }
+
+        .smart-sidebar a.logout-link {
+            color: #dc2626;
+            margin-top: 2rem;
+        }
+        .smart-sidebar a.logout-link:hover {
+            background: #fef2f2;
+        }
+
+        /* MAIN AREA */
         .main-content-area {
-            margin-left: 300px;
-            padding: 28px 28px;
-            transition: 0.2s;
+            margin-left: var(--sidebar-width);
+            padding: 2.5rem;
+            min-height: calc(100vh - 68px);
+            transition: var(--transition);
         }
+
         .glass-card-modern {
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(12px);
-            border-radius: 2rem;
-            padding: 1.8rem;
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
-            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
         }
+
         .section-head {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(125deg, #1e3a8a, #3b82f6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 16px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* GRID & SYSTEM CARDS */
         .worksheet-smart-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-top: 1.5rem;
         }
+
         .worksheet-card-smart {
-            background: white;
-            border-radius: 1.8rem;
-            padding: 1.4rem;
-            transition: all 0.25s;
-            border: 1px solid #e2edff;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+            background: #f8fafc;
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
         .worksheet-card-smart:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
-            border-color: #93c5fd;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e1;
         }
-        .btn-preview-smart {
-            background: linear-gradient(95deg, #2563eb, #1d4ed8);
-            border: none;
-            padding: 8px 20px;
-            border-radius: 40px;
-            color: white;
+
+        .worksheet-card-smart h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.5rem 0 0.25rem;
+            color: var(--text-main);
+        }
+
+        .worksheet-card-smart p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-preview-smart, .btn-outline-smart {
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
             font-weight: 600;
             font-size: 0.8rem;
             cursor: pointer;
-            transition: 0.2s;
+            transition: var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 0.375rem;
+            text-decoration: none;
+            border: none;
         }
+
+        .btn-preview-smart {
+            background: var(--primary-light);
+            border: 1px solid var(--primary-light);
+            color: #ffffff;
+        }
+
         .btn-preview-smart:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+            background: var(--primary);
+            border-color: var(--primary);
         }
+
         .btn-outline-smart {
             background: transparent;
-            border: 1.5px solid #2563eb;
-            color: #2563eb;
-            padding: 7px 18px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
+            border: 1px solid #cbd5e1;
+            color: var(--text-muted);
+        }
+
+        .btn-outline-smart:hover {
+            background: #edf2f7;
+            color: var(--text-main);
+        }
+
+        /* BADGES */
+        .badge-topic {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.775rem;
+            font-weight: 500;
+            color: var(--text-muted);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            text-decoration: none;
+            gap: 0.375rem;
         }
-        .btn-outline-smart:hover {
-            background: #2563eb10;
+
+        .topic-container {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 1.5rem;
         }
+
+        /* MCQ INTERACTIVE LAYOUTS */
+        .quiz-wrapper-box {
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            background: #f8fafc;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .quiz-question-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .quiz-question-card p {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .quiz-options-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .quiz-option-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .quiz-option-item:hover {
+            background: #f1f5f9;
+            border-color: var(--primary-light);
+        }
+
+        .quiz-option-item.selected {
+            background: #eff6ff;
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .quiz-option-item.correct-reveal {
+            background: #dcfce7;
+            border-color: var(--success);
+            color: var(--success);
+        }
+
+        .quiz-option-item.wrong-reveal {
+            background: #fee2e2;
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .score-board-panel {
+            background: linear-gradient(135deg, #1e3a8a, #0284c7);
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .score-board-panel h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* UTILITIES & NOTICE */
+        .alert-panel {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary-light);
+            padding: 1rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.875rem;
+            color: var(--primary);
+            margin-top: 1rem;
+        }
+
+        .help-section-custom {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-top: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .faq-block p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .faq-block strong {
+            color: var(--text-main);
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .footer-note-smart {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.775rem;
+            color: var(--text-muted);
+        }
+
+        /* MODAL PREVIEW */
         .preview-modal {
             display: none;
             position: fixed;
@@ -268,47 +544,61 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.85);
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
             z-index: 1000;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 1.5rem;
         }
+
         .preview-container {
-            background: white;
-            width: 95%;
-            max-width: 1200px;
-            height: 90%;
-            border-radius: 32px;
+            background: #ffffff;
+            width: 100%;
+            max-width: 1000px;
+            height: 85%;
+            border-radius: var(--radius-md);
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+
         .preview-header {
-            background: #1e3a8a;
-            color: white;
-            padding: 12px 20px;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
+        .preview-header span {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
         .preview-iframe {
             flex: 1;
             border: none;
             width: 100%;
+            background: #f1f5f9;
         }
-        .help-section-custom {
-            background: linear-gradient(115deg, #eef4ff, #ffffff);
-            border-radius: 2rem;
-            padding: 1.8rem;
-            border-left: 6px solid #f59e0b;
+
+        .close-modal-btn {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: var(--transition);
         }
-        .footer-note-smart {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 0.75rem;
-            color: #4b5563;
+
+        .close-modal-btn:hover {
+            opacity: 1;
         }
+
         .menu-overlay-smart {
             display: none;
             position: fixed;
@@ -316,20 +606,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.4);
+            background: rgba(15, 23, 42, 0.4);
             z-index: 98;
         }
-        .badge-topic {
-            background: #dbeafe;
-            border-radius: 30px;
-            padding: 4px 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #1e40af;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+
+        /* NOTIFICATION POPUP */
+        .custom-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #334155;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+            z-index: 1100;
+            display: none;
+            animation: fadeIn 0.3s;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
         @media (max-width: 850px) {
             .smart-sidebar {
                 transform: translateX(-100%);
@@ -338,31 +640,24 @@
                 transform: translateX(0);
             }
             .main-content-area {
-                margin-left: 0 !important;
-                padding: 20px 16px;
+                margin-left: 0;
+                padding: 1.5rem;
             }
             .mobile-toggle {
                 display: block;
             }
-            .section-head {
-                font-size: 1.5rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .brand-title {
-                font-size: 0.9rem;
-            }
-            .logo-icon-smart {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
+            .smart-header {
+                padding: 0.875rem 1.25rem;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- LOGIN PAGE -->
+<!-- NOTIFICATION MODULE -->
+<div id="portalToast" class="custom-toast"></div>
+
+<!-- LAYER 1: ACCESS INTERFACE (LOGIN) -->
 <div id="loginPage" class="login-wrapper">
     <div class="login-card">
         <div class="login-logo">
@@ -370,162 +665,414 @@
         </div>
         <div class="login-brand">
             <h2>Excelencia LMS</h2>
-            <h3 style="color:#2563eb; margin-top:4px;">Gospel Grace Education × Tec With Amey</h3>
-            <p style="margin-top: 12px;">Smart Grammar Worksheets | Noun • Verb • Tense • Preposition • Adjective</p>
+            <h4>Digital Operations & Workspace Management</h4>
+            <p>Centralized LMS engine providing scalable administrative views, robust media storage architectures, and automated evaluation frameworks.</p>
         </div>
-        <input type="text" id="smartUsername" placeholder="Student ID (student01 to student10)" autocomplete="off">
-        <input type="password" id="smartPassword" placeholder="Password: Learn@2024">
-        <button class="login-btn" onclick="smartLogin()"><i class="fas fa-laptop-code"></i> Access Smart Portal</button>
-        <p style="margin-top: 16px; font-size: 12px;">Demo: student01 / Learn@2024 &nbsp;|&nbsp; 📱 Mobile Ready</p>
-        <div style="margin-top: 16px; background:#f1f5f9; padding: 8px; border-radius: 40px;">
-            <span style="font-size:12px;">📞 +91 9049132586 | gospelgraceedu@gmail.com</span>
+        <div class="login-form">
+            <input type="text" id="smartUsername" placeholder="Student ID (e.g. student01)" autocomplete="off">
+            <input type="password" id="smartPassword" placeholder="Access Password">
+            <button class="login-btn" onclick="smartLogin()">
+                <i class="fas fa-shield-alt"></i> Authenticate Identity
+            </button>
+        </div>
+        <div class="login-meta">
+            <p><strong>Demo Configuration:</strong> student01 / Learn@2024</p>
+        </div>
+        <div class="login-footer-info">
+            <i class="fas fa-info-circle"></i> Support Desk: +91 9049132586 | gospelgraceedu@gmail.com
         </div>
     </div>
 </div>
 
-<!-- SMART MAIN PORTAL -->
+<!-- LAYER 2: MANAGEMENT WRAPPER (PORTAL) -->
 <div id="smartPortal" class="main-portal">
     <div class="smart-header">
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <button class="mobile-toggle" id="smartMenuToggle">☰</button>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button class="mobile-toggle" id="smartMenuToggle"><i class="fas fa-bars"></i></button>
             <div class="logo-area-smart">
                 <div class="logo-icon-smart">
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-network-wired"></i>
                 </div>
-                <div class="brand-title">Gospel Grace | <span>Excelencia LMS</span><br><small style="font-size:10px;">Grammar Mastery • Smart Drive</small></div>
+                <div class="brand-title">
+                    Gospel Grace <span>| Excelencia LMS</span><br>
+                    <small>Enterprise Learning Space</small>
+                </div>
             </div>
         </div>
-        <div class="user-badge" id="smartUserDisplay"><i class="fas fa-user-graduate"></i> Student</div>
+        <div class="user-badge" id="smartUserDisplay">
+            <i class="fas fa-user-circle"></i> Active Session
+        </div>
     </div>
+    
     <div id="smartMenuOverlay" class="menu-overlay-smart"></div>
 
+    <!-- SIDEBAR ARCHITECTURE -->
     <div class="smart-sidebar" id="smartSidebar">
-        <a href="#" onclick="smartShowSection('smartDashboard'); closeSmartMenu(); return false;"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        <a href="#" onclick="smartShowSection('smartGrammarHub'); closeSmartMenu(); return false;"><i class="fas fa-book-open"></i> Grammar Worksheets</a>
-        <a href="#" onclick="smartShowSection('smartTestHub'); closeSmartMenu(); return false;"><i class="fas fa-puzzle-piece"></i> Smart Quizzes</a>
-        <a href="#" onclick="smartShowSection('smartDriveAccess'); closeSmartMenu(); return false;"><i class="fab fa-google-drive"></i> Drive Resources</a>
-        <a href="#" onclick="smartShowSection('smartSupportHub'); closeSmartMenu(); return false;"><i class="fas fa-headset"></i> Help & Support</a>
-        <a href="#" onclick="smartLogout(); closeSmartMenu(); return false;" style="color:#b91c1c;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <a href="#" id="nav-smartDashboard" onclick="smartShowSection('smartDashboard'); closeSmartMenu(); return false;"><i class="fas fa-chart-pie"></i> Executive Overview</a>
+        <a href="#" id="nav-smartGrammarHub" onclick="smartShowSection('smartGrammarHub'); closeSmartMenu(); return false;"><i class="fas fa-folder"></i> Managed Worksheets</a>
+        <a href="#" id="nav-smartTestHub" onclick="smartShowSection('smartTestHub'); closeSmartMenu(); return false;"><i class="fas fa-check-square"></i> Evaluation Modules</a>
+        <a href="#" id="nav-smartDriveAccess" onclick="smartShowSection('smartDriveAccess'); closeSmartMenu(); return false;"><i class="fas fa-cloud"></i> Storage Repositories</a>
+        <a href="#" id="nav-smartSupportHub" onclick="smartShowSection('smartSupportHub'); closeSmartMenu(); return false;"><i class="fas fa-id-card"></i> Client Assistance</a>
+        <a href="#" onclick="smartLogout(); closeSmartMenu(); return false;" class="logout-link"><i class="fas fa-power-off"></i> Terminate Session</a>
     </div>
 
+    <!-- VIEWPORT LAYER -->
     <div class="main-content-area" id="smartMainContent">
-        <!-- DASHBOARD -->
+        
+        <!-- MODULE A: OVERVIEW -->
         <div id="smartDashboard">
             <div class="glass-card-modern">
-                <span class="section-head"><i class="fas fa-gem"></i> Welcome to Excelencia – Smarter Grammar Learning</span>
-                <p style="margin-top: 14px;">Powered by Gospel Grace Education & Tec With Amey, this intelligent portal delivers interactive <strong>Noun, Preposition, Adjective, Verbs, Tenses</strong> worksheets via integrated Google Drive. Fully responsive across all devices – learn seamlessly.</p>
-                <div style="background: #eef4ff; padding: 18px; border-radius: 28px; margin-top: 22px;">
-                    <i class="fas fa-lightbulb"></i> <strong>Smart Tip:</strong> Click on any worksheet to preview instantly or download PDF for offline practice.
+                <h2 class="section-head"><i class="fas fa-window-restore"></i> Portal Overview</h2>
+                <p class="card-desc">Welcome to the Excelencia Management Suite. This system functions as a centralized operations hub provisioning interactive metrics pipelines via automated workflow assets, secure drive integrations, and responsive cross-platform capability Frameworks.</p>
+                <div class="alert-panel">
+                    <i class="fas fa-lightbulb"></i> <strong>Operational Tip:</strong> Navigate to the Evaluation Modules tab to attempt newly launched live MCQ test evaluations.
                 </div>
             </div>
             <div class="glass-card-modern">
-                <h3>📚 Core Grammar Topics</h3>
-                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0;">
-                    <span class="badge-topic"><i class="fas fa-tag"></i> Noun Mastery</span>
-                    <span class="badge-topic"><i class="fas fa-map-pin"></i> Preposition</span>
-                    <span class="badge-topic"><i class="fas fa-palette"></i> Adjective</span>
-                    <span class="badge-topic"><i class="fas fa-running"></i> Verbs</span>
-                    <span class="badge-topic"><i class="fas fa-hourglass-half"></i> Tenses</span>
-                </div>
-                <p>Downloadable worksheets + answer keys available via Drive. 150+ grammar exercises.</p>
+                <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Core Operational Modules</h3>
+                <p class="card-desc" style="margin-bottom: 1rem;">Managed file indices cover categorical assessments for comprehensive development tracking structures.</p>
+                <div class="topic-container" id="overviewTopicsBadgeContainer"></div>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Database access currently monitors over 150 unique module datasets available via cloud infrastructure mirrors.</p>
             </div>
         </div>
 
-        <!-- GRAMMAR WORKSHEETS HUB -->
+        <!-- MODULE B: MANAGED ASSETS (WORKSHEETS) -->
         <div id="smartGrammarHub" style="display: none;">
             <div class="glass-card-modern">
-                <h2 class="section-head"><i class="fas fa-file-alt"></i> Smart Grammar Worksheets</h2>
-                <p>Preview, download, or open directly from Gospel Grace secure drive.</p>
+                <h2 class="section-head"><i class="fas fa-copy"></i> Document Management Index</h2>
+                <p class="card-desc">Provision, explore, and access dynamic evaluation sheets hosted directly inside secure remote drive units.</p>
                 <div id="smartWorksheetsGrid" class="worksheet-smart-grid"></div>
             </div>
         </div>
 
-        <!-- TEST ZONE -->
+        <!-- MODULE C: EVALUATIONS (MCQ TEST SERIES) -->
         <div id="smartTestHub" style="display: none;">
             <div class="glass-card-modern">
-                <h2 class="section-head"><i class="fas fa-brain"></i> Interactive Quiz Challenges</h2>
-                <p>Test your concepts before diving into full worksheets.</p>
-                <div class="worksheet-smart-grid">
-                    <div class="worksheet-card-smart"><i class="fas fa-tag" style="font-size:2rem; color:#2563eb;"></i><h3>Noun Explorer</h3><p>Identify proper/common nouns.</p><button class="btn-preview-smart" onclick="alert('📖 Full Noun worksheet has 30+ questions. Visit Grammar Worksheets for PDF.')">Try Sample</button></div>
-                    <div class="worksheet-card-smart"><i class="fas fa-location-arrow" style="font-size:2rem; color:#2563eb;"></i><h3>Preposition Master</h3><p>Fill blanks & sentence correction.</p><button class="btn-preview-smart" onclick="alert('📍 Access Preposition worksheet with 25+ drills in Grammar tab.')">Sample Quiz</button></div>
-                    <div class="worksheet-card-smart"><i class="fas fa-hourglass-start" style="font-size:2rem; color:#2563eb;"></i><h3>Tense Shifter</h3><p>Present/Past/Future transformation.</p><button class="btn-preview-smart" onclick="alert('⏳ Full Tense worksheet available in Drive Resources.')">Try Now</button></div>
+                <h2 class="section-head"><i class="fas fa-diagnoses"></i> Diagnostic Evaluations & MCQ Test Series</h2>
+                <p class="card-desc">Initialize interactive testing models to check system concept clarity metrics prior to document deployment workflows.</p>
+                
+                <div class="worksheet-smart-grid" id="quizTopicsContainer"></div>
+
+                <!-- LIVE INTERACTIVE ENGINE INTERFACE -->
+                <div class="quiz-wrapper-box" id="quizWrapperBox">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem;">
+                        <h3 id="quizTitleDisplay" style="font-weight: 700; color: var(--primary);">MCQ Evaluation Run</h3>
+                        <button class="btn-outline-smart" onclick="exitQuizEngine()"><i class="fas fa-times"></i> Cancel Test</button>
+                    </div>
+                    
+                    <div id="quizQuestionsContainer"></div>
+                    
+                    <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+                        <button class="btn-preview-smart" id="quizSubmitBtn" onclick="evaluateQuizAnswers()" style="padding: 0.75rem 2rem; font-size: 0.95rem;"><i class="fas fa-file-invoice"></i> Submit Answers For Review</button>
+                    </div>
                 </div>
+
+                <!-- SCORE PERFORMANCE BREAKDOWN -->
+                <div class="score-board-panel" id="scoreBoardPanel">
+                    <h2>Evaluation Performance Scorecard</h2>
+                    <p id="scoreSummaryText" style="font-size: 1.2rem; margin-bottom: 1rem;"></p>
+                    <div style="display: flex; justify-content: center; gap: 1rem;">
+                        <button class="btn-preview-smart" style="background:#ffffff; color:var(--primary); font-weight:700;" onclick="exitQuizEngine()">Acknowledge & Close</button>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- DRIVE RESOURCES -->
+        <!-- MODULE D: CODESPACE STORAGE REPOSITORIES -->
         <div id="smartDriveAccess" style="display: none;">
             <div class="glass-card-modern">
-                <h2 class="section-head"><i class="fab fa-google-drive"></i> Gospel Grace Drive Vault</h2>
-                <button class="btn-preview-smart" onclick="openSmartDriveFolder()" style="background:#2b6e3c; margin-bottom:20px;"><i class="fas fa-folder-open"></i> Open Master Drive Folder</button>
-                <hr style="margin: 20px 0;">
-                <h3>📄 Individual Worksheet Links (Smart Preview)</h3>
-                <ul style="list-style: none; margin-top: 16px;">
-                    <li style="margin: 12px 0;">✅ <strong>Noun Worksheet</strong> — <a href="#" onclick="previewSmartFile('https://drive.google.com/file/d/1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8" target="_blank">Download</a></li>
-                    <li style="margin: 12px 0;">✅ <strong>Preposition Worksheet</strong> — <a href="#" onclick="previewSmartFile('https://drive.google.com/file/d/1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S" target="_blank">Download</a></li>
-                    <li style="margin: 12px 0;">✅ <strong>Adjective Worksheet</strong> — <a href="#" onclick="previewSmartFile('https://drive.google.com/file/d/1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT" target="_blank">Download</a></li>
-                    <li style="margin: 12px 0;">✅ <strong>Verbs Worksheet</strong> — <a href="#" onclick="previewSmartFile('https://drive.google.com/file/d/1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w" target="_blank">Download</a></li>
-                    <li style="margin: 12px 0;">✅ <strong>Tense Worksheet</strong> — <a href="#" onclick="previewSmartFile('https://drive.google.com/file/d/18nLOTW6468lcYD6o1nVKM3qxmf54Evhu/preview'); return false;">Preview</a> | <a href="https://drive.google.com/uc?export=download&id=18nLOTW6468lcYD6o1nVKM3qxmf54Evhu" target="_blank">Download</a></li>
+                <h2 class="section-head"><i class="fas fa-database"></i> Distributed Cloud Core</h2>
+                <p class="card-desc">Access secure multi-tenant data directories provisioning document structures and file bundles.</p>
+                <button class="btn-preview-smart" onclick="openSmartDriveFolder()" style="background:#16a34a; border-color:#16a34a;"><i class="fas fa-hdd"></i> Connect Distributed Storage Hub</button>
+                <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #e2e8f0;">
+                <h3 style="margin-bottom: 1rem; font-weight: 700;">File Index Directory Mapping</h3>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
+                        <span><i class="far fa-file-pdf" style="color:#ef4444;"></i> Noun Assessment Package</span>
+                        <div>
+                            <a href="#" style="color:var(--primary-light); margin-right: 1rem; text-decoration:none;" onclick="previewSmartFile('https://drive.google.com/file/d/1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8/preview'); return false;">Preview</a>
+                            <a href="https://drive.google.com/uc?export=download&id=1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8" target="_blank" style="color:var(--text-muted); text-decoration:none;"><i class="fas fa-download"></i> Fetch</a>
+                        </div>
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
+                        <span><i class="far fa-file-pdf" style="color:#ef4444;"></i> Preposition Logic Matrix</span>
+                        <div>
+                            <a href="#" style="color:var(--primary-light); margin-right: 1rem; text-decoration:none;" onclick="previewSmartFile('https://drive.google.com/file/d/1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S/preview'); return false;">Preview</a>
+                            <a href="https://drive.google.com/uc?export=download&id=1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S" target="_blank" style="color:var(--text-muted); text-decoration:none;"><i class="fas fa-download"></i> Fetch</a>
+                        </div>
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
+                        <span><i class="far fa-file-pdf" style="color:#ef4444;"></i> Adjectives Modifiers Database</span>
+                        <div>
+                            <a href="#" style="color:var(--primary-light); margin-right: 1rem; text-decoration:none;" onclick="previewSmartFile('https://drive.google.com/file/d/1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT/preview'); return false;">Preview</a>
+                            <a href="https://drive.google.com/uc?export=download&id=1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT" target="_blank" style="color:var(--text-muted); text-decoration:none;"><i class="fas fa-download"></i> Fetch</a>
+                        </div>
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
+                        <span><i class="far fa-file-pdf" style="color:#ef4444;"></i> Verbal Operations Engine</span>
+                        <div>
+                            <a href="#" style="color:var(--primary-light); margin-right: 1rem; text-decoration:none;" onclick="previewSmartFile('https://drive.google.com/file/d/1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w/preview'); return false;">Preview</a>
+                            <a href="https://drive.google.com/uc?export=download&id=1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w" target="_blank" style="color:var(--text-muted); text-decoration:none;"><i class="fas fa-download"></i> Fetch</a>
+                        </div>
+                    </li>
+                    <li style="padding: 0.75rem 0; display:flex; justify-content:space-between; align-items:center;">
+                        <span><i class="far fa-file-pdf" style="color:#ef4444;"></i> Temporal Sequence Architecture</span>
+                        <div>
+                            <a href="#" style="color:var(--primary-light); margin-right: 1rem; text-decoration:none;" onclick="previewSmartFile('https://drive.google.com/file/d/18nLOTW6468lcYD6o1nVKM3qxmf54Evhu/preview'); return false;">Preview</a>
+                            <a href="https://drive.google.com/uc?export=download&id=18nLOTW6468lcYD6o1nVKM3qxmf54Evhu" target="_blank" style="color:var(--text-muted); text-decoration:none;"><i class="fas fa-download"></i> Fetch</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
 
-        <!-- SUPPORT HUB -->
+        <!-- MODULE E: DESK SYSTEMS -->
         <div id="smartSupportHub" style="display: none;">
             <div class="help-section-custom">
-                <h2><i class="fas fa-life-ring"></i> Gospel Grace Support Desk</h2>
-                <p>For any technical help, worksheet access, or answer keys – reach out to our LMS team.</p>
-                <div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 20px 0;">
-                    <div class="badge-topic" style="background:#ffffff;"><i class="fas fa-envelope"></i> gospelgraceedu@gmail.com</div>
-                    <div class="badge-topic" style="background:#ffffff;"><i class="fas fa-phone-alt"></i> +91 9049132586</div>
+                <h2 style="font-weight:700; color:var(--primary);"><i class="fas fa-headset"></i> Systems Infrastructure Support</h2>
+                <p class="card-desc" style="margin-top:0.5rem;">For access verification, service degradation anomalies, or security keys allocation workflows, engage technical support channels.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0;">
+                    <div class="badge-topic" style="background:#ffffff; padding:0.5rem 1rem;"><i class="fas fa-envelope"></i> gospelgraceedu@gmail.com</div>
+                    <div class="badge-topic" style="background:#ffffff; padding:0.5rem 1rem;"><i class="fas fa-phone-alt"></i> +91 9049132586</div>
                 </div>
-                <div style="background:#fff7e6; border-radius: 1.5rem; padding: 1rem;">
-                    <strong>⏰ Support Hours:</strong> Mon–Sat, 9 AM – 7 PM | WhatsApp support available.
+                <div style="background:#fffbeb; border: 1px solid #fef3c7; border-radius: var(--radius-sm); padding: 1rem; font-size:0.85rem; color:#b45309;">
+                    <strong>Operational Windows:</strong> Monday through Saturday, 0900 hrs – 1900 hrs IST. Multi-channel messaging active.
                 </div>
             </div>
-            <div class="glass-card-modern" style="margin-top: 1rem;">
-                <h3>📢 Smart FAQ</h3>
-                <p><strong>How to download worksheets?</strong> Click 'Download' button or preview & save PDF.<br>
-                <strong>Mobile compatible?</strong> Fully responsive interface works on phones and tablets.<br>
-                <strong>Need answer keys?</strong> Email support to get access.<br>
-                <strong>Certificate after completion?</strong> Contact LMS TWA team for skill badge.</p>
+            <div class="glass-card-modern" style="margin-top: 1.5rem;">
+                <h3 style="font-weight:700; margin-bottom:1rem;">Documentation & FAQ</h3>
+                <div class="faq-block">
+                    <strong>Asset Extraction Methodology</strong>
+                    <p>Select target asset item download protocols to pipe PDF assets into secure file storage endpoints.</p>
+                    <strong>System Portability Scope</strong>
+                    <p>The system deployment targets mobile architectures via automated viewport normalization algorithms.</p>
+                    <strong>Verification Key Escalations</strong>
+                    <p>Submit validation query criteria directly to administrative networks for review pipelines.</p>
+                </div>
             </div>
         </div>
+        
         <div class="footer-note-smart">
-            © 2025 Gospel Grace Education | Tec With Amey | Excelencia LMS – Smarter Grammar, Smarter Future
+            &copy; 2026 Gospel Grace Education | Excelencia LMS. Secure Systems Infrastructure Environment.
         </div>
     </div>
 </div>
 
-<!-- Modal Preview -->
+<!-- CONTAINER SYSTEM MODAL PREVIEW -->
 <div id="smartPreviewModal" class="preview-modal">
     <div class="preview-container">
         <div class="preview-header">
-            <span><i class="fas fa-file-pdf"></i> Excelencia Grammar Worksheet</span>
-            <button onclick="closeSmartPreview()" style="background:none; border:none; color:white; font-size:28px; cursor:pointer;">&times;</button>
+            <span><i class="fas fa-search"></i> Asset Preview Stream Viewer</span>
+            <button class="close-modal-btn" onclick="closeSmartPreview()">&times;</button>
         </div>
         <iframe id="smartPreviewIframe" class="preview-iframe" src=""></iframe>
     </div>
 </div>
 
 <script>
-    // Worksheet data
+    // System Data Matrices
     const smartWorksheets = [
-        { name: "Noun Worksheet", topic: "Common, Proper, Abstract", icon: "📖", preview: "https://drive.google.com/file/d/1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8/preview", download: "https://drive.google.com/uc?export=download&id=1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8" },
-        { name: "Preposition Worksheet", topic: "Time, Place, Movement", icon: "📍", preview: "https://drive.google.com/file/d/1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S/preview", download: "https://drive.google.com/uc?export=download&id=1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S" },
-        { name: "Adjective Worksheet", topic: "Degrees & Descriptors", icon: "🎨", preview: "https://drive.google.com/file/d/1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT/preview", download: "https://drive.google.com/uc?export=download&id=1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT" },
-        { name: "Verbs Worksheet", topic: "Action, Linking, Helping", icon: "⚡", preview: "https://drive.google.com/file/d/1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w/preview", download: "https://drive.google.com/uc?export=download&id=1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w" },
-        { name: "Tense Worksheet", topic: "Present, Past, Future", icon: "⏳", preview: "https://drive.google.com/file/d/18nLOTW6468lcYD6o1nVKM3qxmf54Evhu/preview", download: "https://drive.google.com/uc?export=download&id=18nLOTW6468lcYD6o1nVKM3qxmf54Evhu" }
+        { name: "Noun Assessment Package", topic: "Categorization Matrices", icon: "📁", preview: "https://drive.google.com/file/d/1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8/preview", download: "https://drive.google.com/uc?export=download&id=1CfwyXLmhhUPANjhfjNaq9nLeLcpXMVd8" },
+        { name: "Preposition Logic Matrix", topic: "Spatial Constraints Routing", icon: "📍", preview: "https://drive.google.com/file/d/1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S/preview", download: "https://drive.google.com/uc?export=download&id=1GJdtu4JzWpP5mVqIRpCGGUUbrNtnCV6S" },
+        { name: "Adjectives Modifiers Database", topic: "Attribute Descriptor Protocols", icon: "🏷️", preview: "https://drive.google.com/file/d/1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT/preview", download: "https://drive.google.com/uc?export=download&id=1lKJ6oiQF3pRxHYs6bzaxazteTAgwAgnT" },
+        { name: "Verbal Operations Engine", topic: "Functional Action Syntactics", icon: "⚙️", preview: "https://drive.google.com/file/d/1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w/preview", download: "https://drive.google.com/uc?export=download&id=1sJxkt-TAZT-9wHjTisRmnmgEhB31zL_w" },
+        { name: "Temporal Sequence Architecture", topic: "Linear Timeline Chronologies", icon: "⏳", preview: "https://drive.google.com/file/d/18nLOTW6468lcYD6o1nVKM3qxmf54Evhu/preview", download: "https://drive.google.com/uc?export=download&id=18nLOTW6468lcYD6o1nVKM3qxmf54Evhu" }
     ];
 
-    // Student database (student01 to student10)
+    // Master Quiz Database - Expanded to 17 requested modules
+    const quizDatabase = {
+        articles: {
+            title: "Articles Assessment (a, an, the)",
+            desc: "Validating definite, indefinite, and zero-article configuration environments.",
+            icon: "fa-font",
+            questions: [
+                { q: "Copper is ______ useful metal.", options: ["a", "an", "the", "no article required"], answer: 0 },
+                { q: "He looks as stupid as ______ owl.", options: ["a", "an", "the", "no article required"], answer: 1 },
+                { q: "______ guide knows the way out of this dense jungle loop.", options: ["A", "An", "The", "No article"], answer: 2 }
+            ]
+        },
+        tenses: {
+            title: "Temporal Sequence & Tenses Hub",
+            desc: "Evaluating multi-tier verb structural changes across linear timelines.",
+            icon: "fa-history",
+            questions: [
+                { q: "By the time the admin logs in, the engine ______ compiling the file indices.", options: ["will finish", "will have finished", "has finished", "is finishing"], answer: 1 },
+                { q: "Identify the tense: 'We have been configuring the server all morning.'", options: ["Present Perfect", "Past Continuous", "Present Perfect Continuous", "Future Perfect"], answer: 2 },
+                { q: "If he ______ earlier, the verification step wouldn't have failed.", options: ["notified", "has notified", "had notified", "would notify"], answer: 2 }
+            ]
+        },
+        partsofspeech: {
+            title: "Parts of Speech Integration Module",
+            desc: "Comprehensive diagnostic checking word functional classifications.",
+            icon: "fa-shapes",
+            questions: [
+                { q: "In the sentence 'Alas! The system crashed completely', 'Alas!' functions as a/an ______.", options: ["Conjunction", "Preposition", "Interjection", "Adverb"], answer: 2 },
+                { q: "What part of speech is the underlined word? 'This is a fast train.'", options: ["Noun", "Adjective", "Adverb", "Verb"], answer: 1 },
+                { q: "Identify the functional role of 'running' here: 'Running is good exercise.'", options: ["Verb", "Noun (Gerund)", "Adjective", "Adverb"], answer: 1 }
+            ]
+        },
+        nouns: {
+            title: "Noun Structures & Classifications",
+            desc: "Testing syntax layouts, countable vs. uncountable assets, and collective rules.",
+            icon: "fa-cube",
+            questions: [
+                { q: "Which of the following is a collective noun?", options: ["Happiness", "Fleet", "Iron", "London"], answer: 1 },
+                { q: "Identify the uncountable noun from the list:", options: ["Book", "Star", "Information", "Child"], answer: 2 },
+                { q: "In the sentence 'The jury delivered its verdict', what type of noun is 'jury'?", options: ["Abstract Noun", "Proper Noun", "Collective Noun", "Material Noun"], answer: 2 }
+            ]
+        },
+        pronouns: {
+            title: "Pronoun Configuration Matrices",
+            desc: "Evaluating relative, reflexive, and demonstrative reference structures.",
+            icon: "fa-user-tag",
+            questions: [
+                { q: "The engineer ______ designed this framework module has left the portal.", options: ["which", "whom", "who", "whose"], answer: 2 },
+                { q: "We must protect ______ from system spoofing vectors.", options: ["ourself", "ourselves", "us", "each other"], answer: 1 },
+                { q: "Each of the candidates brought ______ own evaluation script copy.", options: ["their", "his or her", "its", "there"], answer: 1 }
+            ]
+        },
+        adjectives: {
+            title: "Adjectives & Attribute Modifiers",
+            desc: "Parsing comparative degrees and descriptive quality metrics.",
+            icon: "fa-tags",
+            questions: [
+                { q: "This optimization script is ______ than the previous execution run.", options: ["more fast", "faster", "fastest", "more faster"], answer: 1 },
+                { q: "Of all the designs submitted, yours is the ______.", options: ["creative", "more creative", "most creative", "much creative"], answer: 2 },
+                { q: "Choose the correct order: 'A ______ table.'", options: ["wooden round small", "small round wooden", "round small wooden", "wooden small round"], answer: 1 }
+            ]
+        },
+        verbs: {
+            title: "Verbal Operations & Auxiliary Engines",
+            desc: "Checking finite, non-finite, transitive, and intransitive states.",
+            icon: "fa-cog",
+            questions: [
+                { q: "She ______ the layout on the desktop before leaving.", options: ["lay", "laid", "lied", "lain"], answer: 1 },
+                { q: "In 'The bell rang loudly', the verb 'rang' functions as ______.", options: ["Transitive", "Intransitive", "Auxiliary", "Modal"], answer: 1 },
+                { q: "The process managed ______ the memory leakage anomaly.", options: ["to bypass", "bypassing", "bypass", "bypassed"], answer: 0 }
+            ]
+        },
+        adverbs: {
+            title: "Adverbs & Modifier Syntactics",
+            desc: "Validating frequency, degree, manner, and situational vectors.",
+            icon: "fa-fighter-jet",
+            questions: [
+                { q: "The system network checked the incoming parameters ______.", options: ["thoroughly", "thorough", "more thorough", "most thorough"], answer: 0 },
+                { q: "He ______ ever signs off before double-checking logs.", options: ["hardly", "rarely", "scarcely", "all of the choices match"], answer: 3 },
+                { q: "Where is the adverb of degree? 'The database is completely full.'", options: ["database", "is", "completely", "full"], answer: 2 }
+            ]
+        },
+        prepositions: {
+            title: "Preposition Logic System Validation",
+            desc: "Evaluating spatial metrics, context constraints, and locational layouts.",
+            icon: "fa-compass",
+            questions: [
+                { q: "She is proficient ______ translating architectural plans.", options: ["at", "in", "with", "for"], answer: 1 },
+                { q: "The emergency protocols run parallel ______ the standard regulations.", options: ["to", "with", "of", "by"], answer: 0 },
+                { q: "He jumped ______ the moving platform without checking constraints.", options: ["onto", "in", "into", "upon"], answer: 0 }
+            ]
+        },
+        conjunctions: {
+            title: "Conjunction Linkage Blueprints",
+            desc: "Testing coordinating, subordinating, and correlative connectors.",
+            icon: "fa-link",
+            questions: [
+                { q: "Scarcely had the server updated ______ the backup cycle ran.", options: ["than", "then", "when", "but"], answer: 2 },
+                { q: "He was neither qualified ______ certified for database architecture.", options: ["or", "nor", "and", "but"], answer: 1 },
+                { q: "We will proceed with deployment ______ the verification layer flags a fail.", options: ["unless", "if", "although", "because"], answer: 0 }
+            ]
+        },
+        subjectverb: {
+            title: "Subject–Verb Agreement Validation",
+            desc: "Parsing complex concord logic across singular and plural subjects.",
+            icon: "fa-balance-scale",
+            questions: [
+                { q: "The balance sheet, along with the source ledgers, ______ been processed.", options: ["have", "has", "are", "were"], answer: 1 },
+                { q: "Either the node arrays or the central engine cluster ______ malfunctioning.", options: ["is", "are", "have been", "were"], answer: 0 },
+                { q: "Two-thirds of the database matrix ______ been fully parsed.", options: ["has", "have", "are", "were"], answer: 0 }
+            ]
+        },
+        voice: {
+            title: "Active & Passive Voice Transformations",
+            desc: "Testing syntactic conversion environments and focus structures.",
+            icon: "fa-exchange-alt",
+            questions: [
+                { q: "Passive transformation of: 'The developer compiled the code.'", options: ["The code compiled by the developer.", "The code was compiled by the developer.", "The code has been compiled by the developer.", "The code is compiled by the developer."], answer: 1 },
+                { q: "Identify the voice configuration: 'The firewall is being monitored by security.'", options: ["Active Voice", "Passive Voice", "Bi-directional Voice", "None"], answer: 1 },
+                { q: "Active format of: 'Let the script be executed.'", options: ["Execute the script.", "You must execute the script.", "The script executes.", "Let you execute the script."], answer: 0 }
+            ]
+        },
+        speech: {
+            title: "Direct & Indirect Speech Matrix",
+            desc: "Validating report clauses, pronoun shifting, and temporal backtracking.",
+            icon: "fa-comments",
+            questions: [
+                { q: "Convert: He said, 'I am processing the data logs now.'", options: ["He said that he was processing the data logs then.", "He told he is processing data logs now.", "He said that he is processing data logs then.", "He said he was processing data logs now."], answer: 0 },
+                { q: "Indirect form of: She asked, 'Did you run the patch?'", options: ["She asked if I had run the patch.", "She asked if I ran the patch.", "She inquired that did I run the patch.", "She asked whether have I run the patch."], answer: 0 },
+                { q: "Change to Direct: The admin said that the server would reset the next day.", options: ["The admin said, 'The server will reset tomorrow.'", "The admin said, 'The server would reset next day.'", "The admin states, 'The server resets tomorrow.'", "The admin said, 'The server resets tomorrow.'"], answer: 0 }
+            ]
+        },
+        modals: {
+            title: "Modals & Deontic/Epistemic Logic",
+            desc: "Evaluating capability, authorization, probability, and conditional intent frameworks.",
+            icon: "fa-shield-virus",
+            questions: [
+                { q: "You ______ bypass validation protocols without root certificates.", options: ["must not", "cannot", "need not", "should not"], answer: 1 },
+                { q: "______ you please run a manual system diagnostics pass?", options: ["Should", "Would", "May", "Must"], answer: 1 },
+                { q: "The backup node ______ trigger automatically if the main line drops.", options: ["ought", "should", "shall", "dare"], answer: 1 }
+            ]
+        },
+        determiners: {
+            title: "Determiners & Quantifier Arrays",
+            desc: "Testing distributive assets, quantifiers, and item specifiers.",
+            icon: "fa-list-ol",
+            questions: [
+                { q: "There is ______ point in running the script if structural files are missing.", options: ["little", "a little", "few", "a few"], answer: 0 },
+                { q: "______ server unit must be audited individually for security compliance.", options: ["All", "Every", "Both", "Several"], answer: 1 },
+                { q: "Do you have ______ additional modifications to merge into this pipeline?", options: ["some", "any", "many", "few"], answer: 1 }
+            ]
+        },
+        punctuation: {
+            title: "Punctuation & Syntax Structural Controls",
+            desc: "Verifying comma splices, semi-colons, and quotation mechanics.",
+            icon: "fa-quote-right",
+            questions: [
+                { q: "Choose the syntactically correct sentence structure layout:", options: ["The server failed, however, the backup held.", "The server failed; however, the backup held.", "The server failed; however the backup held.", "The server failed, however the backup held."], answer: 1 },
+                { q: "Which variant uses apostrophes correctly for plural system possession?", options: ["The system's configurations are secure.", "The systems' configurations are secure.", "The systems configuration's are secure.", "The systems configurations' are secure."], answer: 1 },
+                { q: "Identify correct punctuation use within quotes:", options: ["'Run the code,' said the manager.", "'Run the code', said the manager.", "'Run the code' said the manager.", "'Run the code'; said the manager."], answer: 0 }
+            ]
+        },
+        mixedtest: {
+            title: "Mixed Grammar Diagnostics Test",
+            desc: "Comprehensive evaluation blending variables from across all grammar modules.",
+            icon: "fa-network-wired",
+            questions: [
+                { q: "If the backup sequence ______ initiated, data wouldn't have been lost.", options: ["was", "had been", "is", "would be"], answer: 1 },
+                { q: "Identify the mistake: 'Neither the system admin nor his assistants was present.'", options: ["Neither", "nor", "was", "present"], answer: 2 },
+                { q: "The performance metrics of node B are better than ______ of node A.", options: ["that", "those", "this", "these"], answer: 1 }
+            ]
+        }
+    };
+
+    let activeQuizKey = "";
+    let studentSelections = {};
+
+    // Node Registries (student01 to student10)
     const studentDB = {};
     for(let i = 1; i <= 10; i++) {
         let sid = `student${i.toString().padStart(2, '0')}`;
         studentDB[sid] = 'Learn@2024';
     }
 
-    // Login function
+    // Portal Toast Pipeline
+    function showToast(message) {
+        const toast = document.getElementById('portalToast');
+        toast.innerText = message;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 4000);
+    }
+
+    // Authentication Pipeline
     function smartLogin() {
         let uname = document.getElementById('smartUsername').value.trim().toLowerCase();
         let pwd = document.getElementById('smartPassword').value;
@@ -533,25 +1080,28 @@
         if(studentDB[uname] && studentDB[uname] === pwd) {
             document.getElementById('loginPage').style.display = 'none';
             document.getElementById('smartPortal').style.display = 'block';
-            document.getElementById('smartUserDisplay').innerHTML = `<i class="fas fa-user-check"></i> ${uname} | Excelencia`;
+            document.getElementById('smartUserDisplay').innerHTML = `<i class="fas fa-user-check"></i> Session: ${uname.toUpperCase()}`;
             localStorage.setItem('smartUser', uname);
             smartShowSection('smartDashboard');
             renderSmartWorksheets();
+            renderQuizTopicCards();
+            renderOverviewBadges();
             closeSmartMenu();
         } else {
-            alert('❌ Access denied! Use student01 to student10 with password: Learn@2024');
+            showToast('❌ Access Denied: Invalid Authentication Keys.');
         }
     }
 
-    // Logout function
+    // Terminate Handshake Routine
     function smartLogout() {
         localStorage.removeItem('smartUser');
         document.getElementById('loginPage').style.display = 'flex';
         document.getElementById('smartPortal').style.display = 'none';
         closeSmartPreview();
+        exitQuizEngine();
     }
 
-    // Render worksheets grid
+    // Object Node Generator for Worksheets
     function renderSmartWorksheets() {
         const grid = document.getElementById('smartWorksheetsGrid');
         if(!grid) return;
@@ -560,25 +1110,176 @@
             const card = document.createElement('div');
             card.className = 'worksheet-card-smart';
             card.innerHTML = `
-                <div style="font-size: 2rem;">${ws.icon}</div>
-                <h3 style="margin: 8px 0;">${ws.name}</h3>
-                <p>${ws.topic}</p>
-                <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap:wrap;">
-                    <button class="btn-preview-smart" onclick="previewSmartFile('${ws.preview}')"><i class="fas fa-eye"></i> Preview</button>
-                    <a href="${ws.download}" target="_blank" class="btn-outline-smart" style="text-decoration:none;"><i class="fas fa-download"></i> Download PDF</a>
+                <div>
+                    <div style="font-size: 1.5rem; margin-bottom:0.5rem;">${ws.icon}</div>
+                    <h3>${ws.name}</h3>
+                    <p>${ws.topic}</p>
+                </div>
+                <div class="action-group">
+                    <button class="btn-preview-smart" onclick="previewSmartFile('${ws.preview}')"><i class="fas fa-desktop"></i> View</button>
+                    <a href="${ws.download}" target="_blank" class="btn-outline-smart"><i class="fas fa-download"></i> Download</a>
                 </div>
             `;
             grid.appendChild(card);
         });
     }
 
-    // Preview file in modal
+    // Render Overview Section Badges Dynamic Array
+    function renderOverviewBadges() {
+        const container = document.getElementById('overviewTopicsBadgeContainer');
+        if(!container) return;
+        container.innerHTML = '';
+        Object.keys(quizDatabase).forEach(key => {
+            const span = document.createElement('span');
+            span.className = 'badge-topic';
+            span.innerHTML = `<i class="fas fa-check-circle"></i> ${quizDatabase[key].title.split(" (")[0].split(" & ")[0]}`;
+            container.appendChild(span);
+        });
+    }
+
+    // Render All 17 Quiz Topic Cards into Evaluation Hub
+    function renderQuizTopicCards() {
+        const container = document.getElementById('quizTopicsContainer');
+        if(!container) return;
+        container.innerHTML = '';
+        
+        Object.keys(quizDatabase).forEach(key => {
+            const topic = quizDatabase[key];
+            const card = document.createElement('div');
+            card.className = 'worksheet-card-smart';
+            card.innerHTML = `
+                <div>
+                    <i class="fas ${topic.icon}" style="font-size:1.5rem; color:var(--primary-light);"></i>
+                    <h3>${topic.title}</h3>
+                    <p>${topic.desc}</p>
+                </div>
+                <button class="btn-preview-smart" onclick="startQuizEngine('${key}')">Launch MCQ Test</button>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // --- MCQ TEST ENGINE MODULE LOGIC ---
+    function startQuizEngine(quizKey) {
+        activeQuizKey = quizKey;
+        studentSelections = {};
+        const testSuite = quizDatabase[quizKey];
+        
+        document.getElementById('quizTopicsContainer').style.display = 'none';
+        document.getElementById('scoreBoardPanel').style.display = 'none';
+        
+        const wrapper = document.getElementById('quizWrapperBox');
+        document.getElementById('quizTitleDisplay').innerText = testSuite.title;
+        
+        const qContainer = document.getElementById('quizQuestionsContainer');
+        qContainer.innerHTML = '';
+        
+        testSuite.questions.forEach((qObj, qIndex) => {
+            const qCard = document.createElement('div');
+            qCard.className = 'quiz-question-card';
+            
+            let optionsHTML = `<ul class="quiz-options-list">`;
+            qObj.options.forEach((opt, oIndex) => {
+                optionsHTML += `
+                    <li class="quiz-option-item" id="opt-${qIndex}-${oIndex}" onclick="selectQuizOption(${qIndex}, ${oIndex})">
+                        <i class="far fa-circle"></i> ${opt}
+                    </li>`;
+            });
+            optionsHTML += `</ul>`;
+            
+            qCard.innerHTML = `<p>Q${qIndex + 1}. ${qObj.q}</p>${optionsHTML}`;
+            qContainer.appendChild(qCard);
+        });
+        
+        wrapper.style.display = 'block';
+        document.getElementById('quizSubmitBtn').style.display = 'inline-flex';
+        window.scrollTo({ top: wrapper.offsetTop - 20, behavior: 'smooth' });
+    }
+
+    function selectQuizOption(qIndex, oIndex) {
+        const testSuite = quizDatabase[activeQuizKey];
+        // Clean out prior choices for this card
+        for(let i = 0; i < testSuite.questions[qIndex].options.length; i++) {
+            const item = document.getElementById(`opt-${qIndex}-${i}`);
+            if(item) {
+                item.classList.remove('selected');
+                item.querySelector('i').className = 'far fa-circle';
+            }
+        }
+        
+        // Mark active selection
+        const targetElement = document.getElementById(`opt-${qIndex}-${oIndex}`);
+        if(targetElement) {
+            targetElement.classList.add('selected');
+            targetElement.querySelector('i').className = 'far fa-dot-circle';
+        }
+        studentSelections[qIndex] = oIndex;
+    }
+
+    function evaluateQuizAnswers() {
+        const testSuite = quizDatabase[activeQuizKey];
+        let correctCount = 0;
+        let completeCheck = true;
+
+        // Verify all fields are satisfied
+        for(let i = 0; i < testSuite.questions.length; i++) {
+            if(studentSelections[i] === undefined) {
+                completeCheck = false;
+                break;
+            }
+        }
+
+        if(!completeCheck) {
+            showToast("⚠️ Missing Choices: Please process answers for all questions before evaluation.");
+            return;
+        }
+
+        // Apply feedback styles across items
+        testSuite.questions.forEach((qObj, qIndex) => {
+            const chosen = studentSelections[qIndex];
+            const actual = qObj.answer;
+
+            for(let i = 0; i < qObj.options.length; i++) {
+                const optEl = document.getElementById(`opt-${qIndex}-${i}`);
+                if(!optEl) continue;
+
+                // Strip primary active states
+                optEl.classList.remove('selected');
+                
+                if(i === actual) {
+                    optEl.classList.add('correct-reveal');
+                    optEl.querySelector('i').className = 'fas fa-check-circle';
+                } else if(i === chosen && chosen !== actual) {
+                    optEl.classList.add('wrong-reveal');
+                    optEl.querySelector('i').className = 'fas fa-times-circle';
+                }
+            }
+
+            if(chosen === actual) correctCount++;
+        });
+
+        // Toggle visibility to scorecard panel
+        document.getElementById('quizSubmitBtn').style.display = 'none';
+        const scorePanel = document.getElementById('scoreBoardPanel');
+        document.getElementById('scoreSummaryText').innerHTML = `You scored <strong>${correctCount} / ${testSuite.questions.length}</strong> correct responses. Look over the detailed answer matrix above.`;
+        scorePanel.style.display = 'block';
+        window.scrollTo({ top: scorePanel.offsetTop - 20, behavior: 'smooth' });
+    }
+
+    function exitQuizEngine() {
+        document.getElementById('quizWrapperBox').style.display = 'none';
+        document.getElementById('scoreBoardPanel').style.display = 'none';
+        document.getElementById('quizTopicsContainer').style.display = 'grid';
+        activeQuizKey = "";
+        studentSelections = {};
+    }
+
+    // Asset Preview Engine Interface
     function previewSmartFile(link) {
         const modal = document.getElementById('smartPreviewModal');
         const iframe = document.getElementById('smartPreviewIframe');
         let finalLink = link;
         
-        // Handle Google Drive links
         if(link && !link.includes('/preview') && link.includes('file/d/')) {
             const match = link.match(/\/d\/(.*?)(\/|$)/);
             if(match) finalLink = `https://drive.google.com/file/d/${match[1]}/preview`;
@@ -588,85 +1289,75 @@
         modal.style.display = 'flex';
     }
 
-    // Open Drive folder
+    // Storage Hub Routine Trigger
     function openSmartDriveFolder() {
-        // Sample folder link - replace with your actual folder ID
-        const folderLink = "https://drive.google.com/drive/folders/1YOUR_FOLDER_ID_HERE";
-        alert("📁 Google Drive Folder: Please contact support for the master folder link.\n\nEmail: gospelgraceedu@gmail.com");
-        // Alternatively, you can open a sample preview
+        showToast("📁 Redirection Query Pending: Contact system administrator for complete system privileges.");
         previewSmartFile("https://drive.google.com/drive/folders/142MgNE0r_zJfCmLGVQWpILlG0xYYZOr-");
     }
 
-    // Close preview modal
     function closeSmartPreview() {
-        const modal = document.getElementById('smartPreviewModal');
-        modal.style.display = 'none';
-        const iframe = document.getElementById('smartPreviewIframe');
-        iframe.src = '';
+        document.getElementById('smartPreviewModal').style.display = 'none';
+        document.getElementById('smartPreviewIframe').src = '';
     }
 
-    // Show section
+    // Main Workspace Controller Router
     function smartShowSection(sectionId) {
         const sections = ['smartDashboard', 'smartGrammarHub', 'smartTestHub', 'smartDriveAccess', 'smartSupportHub'];
         sections.forEach(sec => {
             const el = document.getElementById(sec);
+            const navEl = document.getElementById('nav-' + sec);
             if(el) el.style.display = 'none';
+            if(navEl) navEl.classList.remove('active');
         });
+        
         const targetSection = document.getElementById(sectionId);
+        const targetNav = document.getElementById('nav-' + sectionId);
         if(targetSection) targetSection.style.display = 'block';
+        if(targetNav) targetNav.classList.add('active');
+        
         if(sectionId === 'smartGrammarHub') renderSmartWorksheets();
+        if(sectionId === 'smartTestHub') renderQuizTopicCards();
+        if(sectionId !== 'smartTestHub') exitQuizEngine(); // Reset quiz if leaving section
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Mobile menu functions
+    // Menu View Controllers
     function closeSmartMenu() {
         const sidebar = document.getElementById('smartSidebar');
         const overlay = document.getElementById('smartMenuOverlay');
         if(sidebar) sidebar.classList.remove('open');
-        if(overlay) overlay.classList.remove('active');
         if(overlay) overlay.style.display = 'none';
     }
     
     function toggleSmartMenu() {
         const sidebar = document.getElementById('smartSidebar');
         const overlay = document.getElementById('smartMenuOverlay');
-        if(sidebar) sidebar.classList.toggle('open');
-        if(overlay) {
-            if(overlay.style.display === 'block') {
-                overlay.style.display = 'none';
-                overlay.classList.remove('active');
-            } else {
-                overlay.style.display = 'block';
-                overlay.classList.add('active');
-            }
+        if(sidebar && sidebar.classList.contains('open')) {
+            closeSmartMenu();
+        } else {
+            if(sidebar) sidebar.classList.add('open');
+            if(overlay) overlay.style.display = 'block';
         }
     }
 
-    // Initialize on page load
+    // Boot Initialization Interceptor
     window.onload = () => {
-        // Check for saved login
         const saved = localStorage.getItem('smartUser');
         if(saved && studentDB[saved]) {
             document.getElementById('loginPage').style.display = 'none';
             document.getElementById('smartPortal').style.display = 'block';
-            document.getElementById('smartUserDisplay').innerHTML = `<i class="fas fa-user-check"></i> ${saved} | Excelencia`;
+            document.getElementById('smartUserDisplay').innerHTML = `<i class="fas fa-user-check"></i> Session: ${saved.toUpperCase()}`;
             smartShowSection('smartDashboard');
             renderSmartWorksheets();
+            renderQuizTopicCards();
+            renderOverviewBadges();
         }
         
-        // Setup mobile menu
         const menuToggle = document.getElementById('smartMenuToggle');
         const menuOverlay = document.getElementById('smartMenuOverlay');
+        if(menuToggle) menuToggle.addEventListener('click', toggleSmartMenu);
+        if(menuOverlay) menuOverlay.addEventListener('click', closeSmartMenu);
         
-        if(menuToggle) {
-            menuToggle.addEventListener('click', toggleSmartMenu);
-        }
-        
-        if(menuOverlay) {
-            menuOverlay.addEventListener('click', closeSmartMenu);
-        }
-        
-        // Close modal when clicking outside
         const modalDiv = document.getElementById('smartPreviewModal');
         if(modalDiv) {
             modalDiv.addEventListener('click', (e) => {
